@@ -364,49 +364,6 @@ public:
         Date2 = temp;
     }
     
-    static int ReadPositiveNumber(std::string message, std::string ErrorMessage) {
-        int number = 1;
-        do {
-            std::cout << message;
-            std::cin >> number;
-            while (std::cin.fail()) {
-                std::cin.clear();
-                std::cin.ignore(std::numeric_limits< std::streamsize>::max(), '\n');
-                std::cout << ErrorMessage;
-                std::cin >> number;
-            }
-        } while (number < 0);
-        return number;
-    }
-    static int ReadPositiveNumberInRange(std::string message, std::string ErrorMessage, int From, int To) {
-        int number = 1;
-        do {
-
-            std::cout << message;
-            std::cin >> number;
-            while (std::cin.fail()) {
-                std::cin.clear();
-                std::cin.ignore(std::numeric_limits< std::streamsize>::max(), '\n');
-                std::cout << ErrorMessage;
-                std::cin >> number;
-            }
-        } while (number < From || number > To);
-
-
-        return number;
-    }
-    static int ReadValidNumber(std::string message, std::string ErrorMessage) {
-        int number = 0;
-        std::cout << message;
-        std::cin >> number;
-        while (std::cin.fail()) {
-            std::cin.clear();
-            std::cin.ignore(std::numeric_limits< std::streamsize>::max(), '\n');
-            std::cout << ErrorMessage;
-            std::cin >> number;
-        }
-        return number;
-    }
 
     static void RemoveElement(int arr[], int& arrLength, int Target)
     {
@@ -589,7 +546,7 @@ public:
         return Result;
     }
 
-    static std::string EncryptionText(std::string Text, int EncryptionKey)
+    static std::string EncryptionText(std::string Text, short EncryptionKey)
     {
         for (int i = 0; i < Text.length(); i++)
         {
@@ -597,13 +554,13 @@ public:
         }
         return Text;
     }
-   static std::string DecryptionText(std::string Text, int DecryptionKey)
+    static std::string DecryptionText(std::string Text, short DecryptionKey)
     {
-        for (int i = 0; i < Text.length(); i++)
-        {
-            Text[i] = char(int(Text[i]) - DecryptionKey);
-        }
-        return Text;
+       for (int i = 0; i < Text.length(); i++)
+       {
+           Text[i] = char(int(Text[i]) - DecryptionKey);
+       }
+       return Text;
     }
 
 
