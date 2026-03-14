@@ -98,10 +98,7 @@ private:
 
     
 public:
-     enum IsPrime {
-        Prime,
-        NotPrime
-    };
+     
      enum enCharactersType {
         None = 0,
         SmallLetter = 1,
@@ -140,16 +137,16 @@ public:
         return sum == number;
     }
 
-    static IsPrime IsPrimeNumber(int number) {
+    static bool IsPrimeNumber(int number) {
         if (number <= 1) {
-            return IsPrime::NotPrime;
+            return false;
         }
         for (int i = 2; i * i <= number; i++) {
             if (number % i == 0) {
-                return IsPrime::NotPrime;
+                return false;
             }
         }
-        return IsPrime::Prime;
+        return true;
     }
 
     static int FrequencyInNumber(int number, int DigitTarget) {
