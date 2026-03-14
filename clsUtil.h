@@ -103,12 +103,12 @@ public:
         NotPrime
     };
      enum enCharactersType {
-        None = 0,        // لا شيء
-        SmallLetter = 1,   // الحروف الصغيرة
-        CapitalLetter = 2,   // الحروف الكبيرة
-        Digit = 3,   // الأرقام
-        Space = 4,   // المسافات
-        Punctuation = 5,   // علامات الترقيم
+        None = 0,
+        SmallLetter = 1,
+        CapitalLetter = 2و
+        Digit = 3,
+        Space = 4,
+        Punctuation = 5,
         MixChar = 6,
         All = 7
     };
@@ -198,7 +198,7 @@ public:
     }
 
     static int MaxNumberInArray(int arr[], int arrLength) {
-        if (arrLength == 0) return 0; // التعامل مع المصفوفة الفارغة
+        if (arrLength == 0) return 0;
         int maxNumber = arr[0];
         for (int i = 1; i < arrLength; i++) {
             if (arr[i] > maxNumber) {
@@ -303,7 +303,7 @@ public:
         case MixChar:
             return char(GenRandomNumber(65, 122));
         default:
-            return ' '; // إرجاع قيمة افتراضية
+            return ' ';
         }
     }
 
